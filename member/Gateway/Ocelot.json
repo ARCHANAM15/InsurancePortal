@@ -1,0 +1,21 @@
+{
+  "Routes": [
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Login/login-user",
+      "DownstreamScheme": "https",
+      "ServiceName": "membersService",
+      "UpstreamPathTemplate": "/api/gateway/Login/login-user",
+      "UpstreamHttpMethod": [ "Post" ]
+    }
+  ],
+
+  "GlobalConfiguration": {
+    // "BaseUrl": "http://localhost:44348"
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": "8500",
+      "Type": "Consul"
+    }
+  }
+}
